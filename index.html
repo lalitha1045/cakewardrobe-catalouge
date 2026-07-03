@@ -248,6 +248,55 @@
   @media(min-width: 920px){ .masonry{ column-count: 3; } }
   @media(min-width: 1240px){ .masonry{ column-count: 4; } }
 
+  /* ============================================================
+     MOBILE — tighten spacing, let chips scroll instead of wrap,
+     let the headline break naturally, keep tap targets comfortable
+     ============================================================ */
+  @media (max-width: 600px){
+    .nav-row{ padding: 12px clamp(16px, 5vw, 20px); gap: 10px; }
+    .logo{ font-size: 1.08rem; gap: 8px; }
+    .logo-mark{ height: 26px; }
+
+    .hero{ padding: 30px 0 26px; gap: 28px; }
+    .eyebrow{ margin-bottom: 12px; }
+    h1.headline{
+      font-size: clamp(1.9rem, 9vw, 2.6rem);
+      line-height: 1.12;
+    }
+    .headline br.brk{ display: none; }
+    .hero-sub{ font-size: 0.96rem; margin-bottom: 24px; }
+    .hero-actions{ gap: 14px; }
+    .btn-primary{ padding: 13px 22px; font-size: 0.9rem; }
+
+    .hero-logo-plate{ width: min(240px, 62vw); padding: 12px; }
+
+    .filter-bar{ top: 55px; padding: 12px 0; }
+    .filter-row{ flex-direction: column; align-items: stretch; gap: 10px; }
+    .chips{
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 2px;
+      margin: 0 -20px; padding-left: 20px; padding-right: 20px;
+    }
+    .chips::-webkit-scrollbar{ display: none; }
+    .chip{ flex-shrink: 0; }
+    .search-wrap{ min-width: 0; width: 100%; }
+
+    .catalogue{ padding: 30px 0 10px; }
+    .section-head{ margin-bottom: 18px; }
+    .masonry{ column-gap: 16px; }
+    .card{ margin-bottom: 16px; }
+    .tag{ margin: 8px 10px 16px; padding: 11px 12px 12px 26px; }
+    .tag-name{ font-size: 0.84rem; }
+    .card-cat{ padding: 10px 12px 0; }
+    .card-actions{ padding: 0 12px 14px; }
+    .ask-link{ font-size: 0.82rem; padding: 6px 0; }
+
+    footer.site{ padding: 40px 0 24px; }
+  }
+
   .card{
     break-inside: avoid;
     -webkit-column-break-inside: avoid;
@@ -368,7 +417,7 @@
   <section class="hero wrap">
     <div>
       <p class="eyebrow">Collaboration Catalogue</p>
-      <h1 class="headline">Everything your<br>cake <em>wears</em>, on<br>one rail.</h1>
+      <h1 class="headline">Everything your<br class="brk">cake <em>wears</em>, on<br class="brk">one rail.</h1>
       <p class="hero-sub">A selection picked exclusively for baker collaborations — not our full shop, just what we'd love to feature on your cakes. Browse the rack below, and if you're after something not shown here, message us and we'll sort out collaboration offers for you.</p>
       <div class="hero-actions">
         <a href="#catalogue" class="btn-primary">
@@ -502,8 +551,8 @@ const PRODUCTS = [
   { name:"Birthday Topper 1", category:"Birthday Toppers", image:"images/bday top1.png" },
   { name:"Birthday Topper 2", category:"Birthday Toppers", image:"images/bday top2.png" },
   { name:"Birthday Topper 3", category:"Birthday Toppers", image:"images/bday top3.png" },
-  { name:"Crown Topper", category:"Birthday Toppers", image:"images/crowntopper.png" },
-  { name:"Princess Topper", category:"Birthday Toppers", image:"images/ptopper.png" },
+  { name:"Crowntopper", category:"Birthday Toppers", image:"images/crowntopper.png" },
+  { name:"Ptopper", category:"Birthday Toppers", image:"images/ptopper.png" },
   { name:"Rainbow Topper", category:"Birthday Toppers", image:"images/rainbowtopper.png" },
 
   // ---- Wedding Toppers (17) ----
