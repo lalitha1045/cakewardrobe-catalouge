@@ -42,13 +42,15 @@
   }
 
   *{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
+  html{ scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
   body{
     margin:0;
     background: var(--white);
     color: var(--ink);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    width: 100%;
   }
   img{ max-width:100%; display:block; }
   a{ color:inherit; }
@@ -284,15 +286,17 @@
     .chip{ flex-shrink: 0; }
     .search-wrap{ min-width: 0; width: 100%; }
 
-    .catalogue{ padding: 30px 0 10px; }
-    .section-head{ margin-bottom: 18px; }
-    .masonry{ column-gap: 16px; }
-    .card{ margin-bottom: 16px; }
-    .tag{ margin: 8px 10px 16px; padding: 11px 12px 12px 26px; }
-    .tag-name{ font-size: 0.84rem; }
-    .card-cat{ padding: 10px 12px 0; }
-    .card-actions{ padding: 0 12px 14px; }
-    .ask-link{ font-size: 0.82rem; padding: 6px 0; }
+    .catalogue{ padding: 24px 0 10px; }
+    .section-head{ margin-bottom: 14px; }
+    .masonry{ column-count: 3; column-gap: 6px; }
+    .card{ margin-bottom: 6px; }
+    .card-cat{ display: none; }
+    .tag{ margin: 5px 5px 8px; padding: 6px 6px 6px 16px; }
+    .tag::before{ width: 5px; height: 5px; left: 6px; }
+    .tag-name{ font-size: 0.62rem; line-height: 1.2; }
+    .card-actions{ padding: 0 6px 8px; }
+    .ask-link{ font-size: 0.6rem; padding: 2px 0; gap: 3px; }
+    .ask-link svg{ width: 9px; height: 9px; }
 
     footer.site{ padding: 40px 0 24px; }
   }
@@ -417,7 +421,7 @@
   <section class="hero wrap">
     <div>
       <p class="eyebrow">Collaboration Catalogue</p>
-      <h1 class="headline">Everything your<br class="brk">cake <em>wears</em>, on<br class="brk">one rail.</h1>
+      <h1 class="headline">Everything your <br class="brk">cake <em>wears</em>, on <br class="brk">one rail.</h1>
       <p class="hero-sub">A selection picked exclusively for baker collaborations — not our full shop, just what we'd love to feature on your cakes. Browse the rack below, and if you're after something not shown here, message us and we'll sort out collaboration offers for you.</p>
       <div class="hero-actions">
         <a href="#catalogue" class="btn-primary">
@@ -532,9 +536,6 @@ const PRODUCTS = [
   { name:"Flower 5", category:"Flowers", image:"images/flower5.png" },
   { name:"Flower 6", category:"Flowers", image:"images/flower6.png" },
   { name:"Flower 7", category:"Flowers", image:"images/flower7.png" },
-  { name:"Flower 11", category:"Flowers", image:"images/flower11.png" },
-  { name:"Flower 12", category:"Flowers", image:"images/flower12.png" },
-  { name:"Flower 13", category:"Flowers", image:"images/flower13.png" },
   { name:"Flower 14", category:"Flowers", image:"images/flower14.png" },
   { name:"Flower 15", category:"Flowers", image:"images/flower15.png" },
   { name:"Flower 16", category:"Flowers", image:"images/flower16.png" },
